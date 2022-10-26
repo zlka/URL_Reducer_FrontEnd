@@ -6,15 +6,15 @@ import logo from '../../static/logo.png'
 const Search = () => {
     const [input,setInput] = useState()
     const [ data, setData ] = useState()
-    const [ hidden, setHidden] = useState(True)
+    const [ hidden, setHidden] = useState(true)
 
     const handleFormSubmit = (e) => {
         e.preventDefault()
         setInput(e.target.value)
         console.log(input)
-        const {data} = axios.post("http://127.0.0.1:5000/random", { url: {input}})
+        axios.post("http://127.0.0.1:5000/random", { url: {input}})
         .then ( data => data.json)
-        .then (setData(data))
+        .then ( data => setData(data))
         setHidden(!hidden)
     };
     
