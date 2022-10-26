@@ -10,12 +10,18 @@ const Search = () => {
 
     const handleFormSubmit = (e) => {
         e.preventDefault()
-        setInput(e.target.value)
-        console.log(input)
-        axios.post("http://127.0.0.1:5000/random", { url: {input}})
+        console.log({input}.input)
+        const sendInput = {input}.input
+        axios.post("http://127.0.0.1:5000/random", { url: sendInput})
         .then ( data => data.json)
         .then ( data => setData(data))
         setHidden(!hidden)
+    };
+    
+    const handleInputChange = (e) => {
+        setInput(e.target.value)
+        console.log("input var",{input})
+
     };
     
     return (
@@ -23,11 +29,11 @@ const Search = () => {
             <div id="img"><img src={logo} alt="logo" /></div>
             <form action="" onSubmit={handleFormSubmit}>   
                 <label for="link"></label>
-                <input type="text" name="link-search" id="link" placeholder="enter link" value={input} />
+                <input type="text" name="link-search" id="link" placeholder="enter link" value={input} onChange={handleInputChange} />
                 <input type="submit"  name="search" id = 'submit' placeholder="Reduce URL" />
             </form>
             <div hidden={hidden}>
-                <a href={data}>URl here</a>
+                <a href={data}>{data}</a>
             </div>
         </div>
     )
