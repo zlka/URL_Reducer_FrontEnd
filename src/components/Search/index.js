@@ -1,13 +1,16 @@
 import React from "react"
 import './index.css'
+import logo from '../../static/logo.png'
 
 const Search = () => {
     return (
         <div className="search">
-            <form>
-                <label for="link">URL:</label>
-                <input type="text" name="link-search" id="link" placeholder="https..." />
-                <input type="submit" name="search" id = 'submit' value="Shorten URL" />
+            <div id="img"><img src={logo} alt="logo" /></div>
+            <form action="heroku">
+            
+                <label for="link"></label>
+                <input type="text" name="link-search" id="link" placeholder="enter link" />
+                <input type="submit" name="search" id = 'submit' value="Reduce URL" />
             </form>
         </div>
     )
