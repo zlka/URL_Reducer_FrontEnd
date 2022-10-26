@@ -14,8 +14,7 @@ const Search = () => {
         const sendInput = { input }.input
         axios.post("http://127.0.0.1:5000/random", { url: sendInput })
         .then(response => {
-             data = response.data;
-             setData(data)
+             setData(response.data);
             })
         console.log("data", data)
         setHidden(!hidden)
