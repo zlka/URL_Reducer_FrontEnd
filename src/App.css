@@ -1,0 +1,11 @@
+:root {
+    --bg: #f0eee2;
+    --teal: #83a889;
+    --forest: #1d3527;
+  }
+
+  *{
+    font-family: 'Lora', serif;
+font-family: 'Work Sans', sans-serif;
+  }
+  
