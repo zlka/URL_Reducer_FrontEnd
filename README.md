@@ -22,7 +22,8 @@ The project involved users entering a url which then returns a shortened URL:
 The site is deployed on [netlify](https://reduceurl.netlify.app/).
 
 ### Usage
-Clone and run [the backend](https://github.com/Mounaiyk/URL_shortener_backend) then head to the netlify link to use the site.
+Clone and follow the usage instructions for the [the backend](https://github.com/Mounaiyk/URL_shortener_backend) 
+Click the Netlify link to access the app
 
 ## Technologies
 
