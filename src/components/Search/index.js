@@ -5,15 +5,17 @@ import logo from '../../static/logo.png'
 
 const Search = () => {
     const [input,setInput] = useState()
+    const [ data, setData ] = useState()
+    const [ hidden, setHidden] = useState(True)
 
     const handleFormSubmit = (e) => {
         e.preventDefault()
         setInput(e.target.value)
         console.log(input)
-        axios.post("http://127.0.0.1:5000", { url: {input}})
-        .then ( response => console.log(response))
-        
-
+        const {data} = axios.post("http://127.0.0.1:5000/random", { url: {input}})
+        .then ( data => data.json)
+        .then (setData(data))
+        setHidden(!hidden)
     };
     
     return (
@@ -24,6 +26,9 @@ const Search = () => {
                 <input type="text" name="link-search" id="link" placeholder="enter link" value={input} />
                 <input type="submit"  name="search" id = 'submit' placeholder="Reduce URL" />
             </form>
+            <div hidden={hidden}>
+                <a href={data}>URL Reduced</a>
+            </div>
         </div>
     )
 };
