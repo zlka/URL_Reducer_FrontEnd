@@ -27,7 +27,7 @@ const Search = () => {
                 <input type="submit"  name="search" id = 'submit' placeholder="Reduce URL" />
             </form>
             <div hidden={hidden}>
-                <a href={data}>{data}</a>
+                <a href={data}>URl here</a>
             </div>
         </div>
     )
