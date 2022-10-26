@@ -38,7 +38,9 @@ form {
     outline:none;
     color: var(--forest)
 }
-
+#link:hover{
+    border-bottom: solid 2px var(--teal)
+}
 
 #submit {
     border: none;
